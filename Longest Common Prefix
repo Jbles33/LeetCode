@@ -1,0 +1,19 @@
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        
+        if len(strs) == 1:
+            return strs[0]
+        else:
+            common_prefix = ''
+
+            list_len = len(strs)
+            min_len = min([len(i) for i in strs])
+            
+            first_word = strs[0]
+
+            for i in range(len(first_word)):
+                for word in strs[1:]:  # Compare with the rest of the words
+                  if i >= len(word) or word[i] != first_word[i]:
+                     return first_word[:i]  # Return the prefix up to the mismatch
+        
+        return first_word  # If no mismatch found
