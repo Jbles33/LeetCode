@@ -1,0 +1,17 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        
+        myList = list(s)
+        for i in range(len(myList)):
+            if myList[0] in (")", "}","]"):
+                return False
+            elif myList[i] == myList[i+1]:
+                return False
+            elif myList[i] == '(' and myList[i+1] in ("}","]"):
+                return False
+            elif myList[i] == '{' and myList[i+1] in (")","]"):
+                return False
+            elif myList[i] == '[' and myList[i+1] in (")","}"):
+                return False
+            else:
+                return True
