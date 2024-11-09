@@ -1,0 +1,17 @@
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        
+        length = 0
+        rev = s[::-1]
+        rev = rev.strip()
+        rev_list = list(rev)
+        size = len(rev_list)
+
+        for i in range(size):
+            if rev_list[i].isalpha():
+                length += 1
+
+            elif rev_list[i] == ' ' or i == '"':
+                return length
+       
+        return length
