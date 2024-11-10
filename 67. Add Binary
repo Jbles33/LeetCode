@@ -1,0 +1,15 @@
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        
+        # Convert binary strings to integers
+        num1 = int(a, 2)
+        num2 = int(b, 2)
+
+        # Add the numbers
+        sum_result = num1 + num2
+
+        # Convert the sum back to binary
+        binary_sum = bin(sum_result)
+
+        # Return result leaving off the binary prefix "0b"
+        return binary_sum[2:]
